@@ -1,0 +1,428 @@
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-1-g15f4949  Build Version: 1.6.7594.29634  81.5+32.5
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="yahboomcar">
+    <link name="base_footprint"/>
+    <link name="imu_link"/>
+    <link name="base_link">
+        <inertial>
+            <origin xyz="0.00498197982182523 5.70233829969297E-05 -0.0121008098068578" rpy="0 0 0"/>
+            <mass value="0.486218814966626"/>
+            <inertia
+                    ixx="0.00196277727666921"
+                    ixy="2.50447049446755E-07"
+                    ixz="0.000140534767811098"
+                    iyy="0.00457256033711368"
+                    iyz="2.68618064993882E-07"
+                    izz="0.00493927269870476"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/base_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0 0.7 0 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/base_link.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="base_joint" type="fixed">
+        <parent link="base_footprint"/>
+        <child link="base_link"/>
+        <origin xyz="0.0 0.0 0.0815" rpy="0 0 0"/>
+    </joint>
+    <joint name="base_imu" type="fixed">
+        <parent link="base_link"/>
+        <child link="imu_link"/>
+        <origin xyz="-0.06 0.01 0.01" rpy="0 3.1415 1.5707"/>
+    </joint>
+
+    <link name="front_right_wheel">
+        <inertial>
+            <origin xyz="1.9051E-06 -2.3183E-07 -0.00064079" rpy="1.57 0 0"/>
+            <mass value="0.051532"/>
+            <inertia ixx="1.4595E-05" ixy="-4.3975E-10" ixz="4.415E-10"
+                     iyy="1.4594E-05" iyz="-1.7476E-09" izz="2.4264E-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/front_right_wheel.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/front_right_wheel.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="front_right_joint" type="continuous">
+        <origin xyz="0.08 -0.0845 -0.0389" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="front_right_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="1.5"/>
+    </joint>
+    <link name="front_left_wheel">
+        <inertial>
+            <origin xyz="2.3728E-06 -9.4228E-07 0.00064068" rpy="1.57 0 0"/>
+            <mass value="0.051543"/>
+            <inertia ixx="1.4597E-05" ixy="-4.7945E-10" ixz="-2.4786E-10"
+                     iyy="1.4598E-05" iyz="1.7972E-09" izz="2.4267E-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/front_left_wheel.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/front_left_wheel.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="front_left_joint" type="continuous">
+        <origin xyz="0.08 0.084492 -0.0389" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="front_left_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="1.5"/>
+    </joint>
+    <link name="back_right_wheel">
+        <inertial>
+            <origin xyz="-1.75924169923403E-06 1.28388821071107E-06 -0.000590549296238266" rpy="1.57 0 0"/>
+            <mass value="0.051540174053366"/>
+            <inertia ixx="1.45974152250002E-05" ixy="1.94850559178397E-10" ixz="-1.61846387282284E-09"
+                     iyy="1.4596501955693E-05" iyz="-6.27904057423818E-10" izz="2.42663091380451E-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/back_right_wheel.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/back_right_wheel.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="back_right_joint" type="continuous">
+        <origin xyz="-0.08 -0.0845 -0.03946" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="back_right_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="1.5"/>
+    </joint>
+    <link name="back_left_wheel">
+        <inertial>
+            <origin xyz="-4.01213085227115E-07 2.04910264598596E-06 0.000590775697051377" rpy="1.57 0 0"/>
+            <mass value="0.0515309299357028"/>
+            <inertia ixx="1.45942986129926E-05" ixy="-3.19787215398093E-10" ixz="1.74943062058915E-09"
+                     iyy="1.45948727598913E-05" iyz="1.61769812110049E-10" izz="2.4263683888153E-05"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/back_left_wheel.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="1.57 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/mecanum/back_left_wheel.STL"/>
+            </geometry>
+        </collision>
+    </link>
+    <joint name="back_left_joint" type="continuous">
+        <origin xyz="-0.08 0.084492 -0.03954" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="back_left_wheel"/>
+        <axis xyz="0 1 0" rpy="0 0 0"/>
+        <limit effort="100" velocity="1.5"/>
+    </joint>
+    
+    <link name="laser_link">
+        <inertial>
+            <origin xyz="-0.0176558922685589 0.000671805271544437 0.0219302095894866" rpy="0 0 0" />
+            <mass value="0.0483909504209895" />
+            <inertia ixx="1.58456966399128E-05" ixy="-4.23913983850005E-07" ixz="-2.09597897904374E-07"
+                     iyy="3.89262522903605E-05" iyz="3.24809725932687E-07" izz="4.86230801106223E-05" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/sensor/laser_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/sensor/laser_link.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="laser_joint" type="fixed">
+        <origin xyz="0.0435 5.25826986680105E-05 0.11" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="laser_link"/>
+    </joint>
+
+    <link name="camera_link">
+        <inertial>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <mass value="0"/>
+            <inertia ixx="0" ixy="0" ixz="0" iyy="0" iyz="0" izz="0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/sensor/camera_link.STL"/>
+            </geometry>
+            <material name="">
+                <color rgba="0.7 0.7 0.7 1"/>
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="/home/ica/auto_parking/install/rosmaster_x3/share/rosmaster_x3/meshes/sensor/camera_link.STL"/>
+            </geometry>
+        </collision>
+    </link>
+
+    <joint name="camera_joint" type="fixed">
+        <origin xyz="0.057105 1.7948E-05 0.03755" rpy="0 0 0"/>
+        <parent link="base_link"/>
+        <child link="camera_link"/>
+    </joint>
+
+    <link name="camera_link_optical"/>
+
+    <joint name="camera_optical_joint" type="fixed">
+        <parent link="camera_link"/>
+        <child link="camera_link_optical"/>
+        <origin rpy="-1.5707963267948966 0 -1.5707963267948966" xyz="0 0 0"/>
+    </joint>
+
+    <gazebo>
+        <plugin name='diff_drive_back' filename='libgazebo_ros_diff_drive.so'>
+            <ros>
+                <namespace>/</namespace>
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+            <update_rate>15</update_rate>
+            <!-- wheels -->
+          <left_joint>back_left_joint</left_joint>
+          <right_joint>back_right_joint</right_joint>
+            <!-- kinematics -->
+            <wheel_separation>0.2</wheel_separation>
+            <wheel_diameter>0.065</wheel_diameter>
+            <!-- limits -->
+            <max_wheel_torque>20</max_wheel_torque>
+            <max_wheel_acceleration>2.0</max_wheel_acceleration>
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_footprint</robot_base_frame>
+        </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name='diff_drive_front' filename='libgazebo_ros_diff_drive.so'>
+            <ros>
+                <namespace>/</namespace>
+                <remapping>cmd_vel:=cmd_vel</remapping>
+                <remapping>odom:=odom</remapping>
+            </ros>
+            <update_rate>15</update_rate>
+            <!-- wheels -->
+          <left_joint>front_left_joint</left_joint>
+          <right_joint>front_right_joint</right_joint>
+            <!-- kinematics -->
+            <wheel_separation>0.2</wheel_separation>
+            <wheel_diameter>0.065</wheel_diameter>
+            <!-- limits -->
+            <max_wheel_torque>20</max_wheel_torque>
+            <max_wheel_acceleration>1.0</max_wheel_acceleration>
+            <!-- output -->
+            <publish_odom>true</publish_odom>
+            <publish_odom_tf>true</publish_odom_tf>
+            <publish_wheel_tf>true</publish_wheel_tf>
+            <odometry_frame>odom</odometry_frame>
+            <robot_base_frame>base_footprint</robot_base_frame>
+        </plugin>
+    </gazebo>
+
+
+    <gazebo>
+        <plugin name="joint_state" filename="libgazebo_ros_joint_state_publisher.so">
+            <ros>
+            <remapping>~/out:=joint_state</remapping>
+            </ros>
+            <update_rate>15</update_rate>
+            <joint_name>front_left_joint</joint_name>
+            <joint_name>front_right_joint</joint_name>
+            <joint_name>back_left_joint</joint_name>
+            <joint_name>back_right_joint</joint_name>
+        </plugin>    
+    </gazebo> 
+
+    <gazebo reference="imu_link">
+        <sensor name="imu_sensor" type="imu">
+        <plugin filename="libgazebo_ros_imu_sensor.so" name="imu_plugin">
+            <ros>
+                <namespace>/</namespace>
+                <remapping>~/out:=imu</remapping>
+            </ros>
+            <initial_orientation_as_reference>false</initial_orientation_as_reference>
+            </plugin>
+            <always_on>true</always_on>
+            <update_rate>50</update_rate>
+            <visualize>true</visualize>
+            <imu>
+            <angular_velocity>
+                <x>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                </noise>
+                </x>
+                <y>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                </noise>
+                </y>
+                <z>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>2e-4</stddev>
+                    <bias_mean>0.0000075</bias_mean>
+                    <bias_stddev>0.0000008</bias_stddev>
+                </noise>
+                </z>
+            </angular_velocity>
+            <linear_acceleration>
+                <x>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                </noise>
+                </x>
+                <y>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                </noise>
+                </y>
+                <z>
+                <noise type="gaussian">
+                    <mean>0.0</mean>
+                    <stddev>1.7e-2</stddev>
+                    <bias_mean>0.1</bias_mean>
+                    <bias_stddev>0.001</bias_stddev>
+                </noise>
+                </z>
+            </linear_acceleration>
+            </imu>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="laser_link">
+        <sensor name="laser_sensor" type="ray">
+        <always_on>true</always_on>
+        <visualize>true</visualize>
+        <update_rate>15</update_rate>
+        <pose>0 0 0 0 0 0</pose>
+        <ray>
+            <scan>
+                <horizontal>
+                <samples>320</samples>
+                <resolution>1.000000</resolution>
+                <min_angle>0.000000</min_angle>
+                <max_angle>6.280000</max_angle>
+                </horizontal>
+            </scan>
+            <range>
+                <min>0.250000</min>
+                <max>10</max>
+                <resolution>1.000000</resolution>
+            </range>
+        </ray>
+
+        <plugin name="laserscan" filename="libgazebo_ros_ray_sensor.so">
+            <ros>
+            <remapping>~/out:=scan</remapping>
+            </ros>
+            <output_type>sensor_msgs/LaserScan</output_type>
+            <frame_name>laser_link</frame_name>
+        </plugin>
+        </sensor>
+    </gazebo>
+
+    <gazebo reference="camera_link">
+        <sensor name="camera_sensor" type="depth">
+        <plugin filename="libgazebo_ros_camera.so" name="depth_camera">
+            <frame_name>camera_link_optical</frame_name>
+        </plugin>
+        <always_on>true</always_on>
+        <update_rate>10</update_rate>
+        <camera name="camera">
+            <horizontal_fov>1.5809</horizontal_fov>
+            <image>
+            <format>R8G8B8</format>
+            <width>640</width>
+            <height>480</height>
+            </image>
+            <distortion>
+            <k1>0.0</k1>
+            <k2>0.0</k2>
+            <k3>0.0</k3>
+            <p1>0.0</p1>
+            <p2>0.0</p2>
+            <center>0.5 0.5</center>
+            </distortion>
+        </camera>
+        </sensor>
+    </gazebo>
+
+</robot>
