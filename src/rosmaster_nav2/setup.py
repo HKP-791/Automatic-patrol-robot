@@ -25,8 +25,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'speaker = rosmaster_nav2.speaker:main',
-            'partol_node = rosmaster_nav2.partol_node:main',
         ],
     },
 )

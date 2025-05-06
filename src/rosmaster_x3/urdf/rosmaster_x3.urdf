@@ -416,8 +416,8 @@
             <horizontal_fov>1.5809</horizontal_fov>
             <image>
             <format>R8G8B8</format>
-            <width>640</width>
-            <height>480</height>
+            <width>512</width>
+            <height>512</height>
             </image>
             <distortion>
             <k1>0.0</k1>

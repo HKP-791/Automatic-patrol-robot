@@ -4,6 +4,12 @@ import os
 
 package_name = 'rosmaster_x3'
 
+def ls_r(dir):
+    for root, dirs, files in os.walk(dir):
+        for file in files:
+            relative_path = os.path.join(dir, os.path.relpath(os.path.join(root, file), dir))
+            return relative_path
+
 setup(
     name=package_name,
     version='0.0.0',
@@ -18,6 +24,7 @@ setup(
         (os.path.join('share', package_name, 'meshes/mecanum'), glob('meshes/mecanum/*.STL')),
         (os.path.join('share', package_name, 'meshes/sensor'), glob('meshes/sensor/*.STL')),
         (os.path.join('share', package_name, 'config'), glob('config/*.yaml')),
+        (os.path.join('share', package_name, 'model'), [ls_r('model')]),
     ],
     install_requires=['setuptools'],
     zip_safe=True,
@@ -28,9 +35,6 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'car_control = rosmaster_x3.car_control:main',
-            'auto_car = rosmaster_x3.auto_car:main',
-            'topic_listener = rosmaster_x3.topic_listener:main',
         ],
     },
 )

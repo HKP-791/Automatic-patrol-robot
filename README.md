@@ -57,4 +57,4 @@ ros2 launch rosmaster_nav2 autopatrol.launch.py
 ```
 
 ### 3.作者
-- [Ica]（desprado233@163.com）
+- [Ica](desprado233@163.com)
