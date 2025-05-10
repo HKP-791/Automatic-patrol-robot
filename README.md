@@ -3,6 +3,8 @@
 ## 1.项目介绍
 本项目基于ROS2、Navigation2和Yolo设计了一个自动巡检机器人，该机器人在Gazebo仿真环境中运行。机器人可以依照设定的路点进行巡检，每到达一个路点时播放到达的目标点信息，同时车载的摄像头会实时检测是否发现目标物体，并在发现目标物体时进行数量统计、发音警告并拍照保存。小车具备静态和动态避障功能，且能够在受困时发音播报并脱困。
 
+<img src="material/output.gif">
+
 各功能包的功能如下:
 - patrol_interfaces:巡检机器人相关消息接口
 - rosmaster_x3:机器人描述文件，包含Gazebo仿真等相关配置
@@ -73,4 +75,7 @@ ros2 launch rosmaster_app autopatrol.launch.py
 正在开发中...
 
 ### 3.作者
-- [Ica](desprado233@163.com)
+
+- Ica_l
+- 邮箱地址 : [desprado233@163.com](desprado233@163.com)
+- Github : [HKP-791](https://github.com/HKP-791)

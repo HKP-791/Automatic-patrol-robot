@@ -12,7 +12,7 @@ class Yolov11Node(Node):
     def __init__(self):
         super().__init__('yolov11_node')
         rosmaster_app_path = FindPackageShare('rosmaster_app').find('rosmaster_app')
-        yolo_model_path = os.path.join(rosmaster_app_path, 'yolo_model', 'best.pt')
+        yolo_model_path = os.path.join(rosmaster_app_path, 'yolo_model', 'yolo10best.pt')
         self.bridge = CvBridge()
         self.image_sub = self.create_subscription(
             Image, '/camera_sensor/image_raw', self.image_callback, 10)
