@@ -6,7 +6,7 @@
 <img src="material/output.gif">
 
 各功能包的功能如下:
-- patrol_interfaces:巡检机器人相关消息接口
+- patrol_interfaces:包含巡检机器人相关消息接口
 - rosmaster_x3:机器人描述文件，包含Gazebo仿真等相关配置
 - rosmaster_nav2:配置机器人导航运行所需的文件，包含Navigation2等导航配置文件
 - rosmaster_app：机器人巡检应用，包含到点播报、目标检测，拍照保存等功能
@@ -33,7 +33,6 @@ sudo apt install ros-$ROS_DISTRO-robot-state-publisher ros-$ROS_DISTRO-joint-sta
 3、安装语音合成和图象相关功能包
 ```bash
 sudo apt install espeak-ng
-sudo pip install espeakng
 sudo apt install ros-$ROS_DISTRO-tf-transformations
 ```
 4、安装配置环境
